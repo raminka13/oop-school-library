@@ -8,8 +8,9 @@ A tool to record what books are in the library and who borrows them in an imagin
 - Check the Ruby version or if you have at all by running `ruby -v` if you get something like this `ruby 2.6.8p205 (2021-07-07 revision 67951)` you have Ruby installed.
 - Clone the repository by runiing `git clone https://github.com/raminka13/oop-school-library.git` in your CLI.
 - `cd oop-school-library`
-- Run `ruby student.rb` to create a student.
-- Run `ruby teacher.rb` to create a teacher.
+- Run `ruby main.rb`
+- Follow the instructions.
+- In options type 99 for a treat.
 ## Author
 
 👤 **Raul A Ospina** 🧑🏻‍💻
