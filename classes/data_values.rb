@@ -1,12 +1,27 @@
 module DataValues
-  @persons = []
+  @people = []
   @books = []
+  @rentals = []
+  @students = []
+  @teachers = []
 
-  def self.persons
-    @persons
+  def self.people
+    @people
+  end
+
+  def self.students
+    @students
+  end
+
+  def self.teachers
+    @teachers
   end
 
   def self.books
     @books
+  end
+
+  def self.rentals
+    @rentals
   end
 end

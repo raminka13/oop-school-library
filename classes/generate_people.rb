@@ -1,12 +1,15 @@
 require './student'
 require './teacher'
 require './data_values'
+require './classroom'
 
 class GeneratePeople
   include DataValues
 
   def initialize
-    @persons = DataValues.persons
+    @people = DataValues.people
+    @students = DataValues.students
+    @teachers = DataValues.teachers
   end
 
   def create_person
@@ -14,9 +17,9 @@ class GeneratePeople
     num = gets.chomp.to_i
     case num
     when 1
-      @persons.push(student_option)
+      student_option
     when 2
-      @persons.push(teacher_option)bbbbbbbbbbbbbbbbbbb
+      teacher_option
     end
   end
 
@@ -64,43 +67,4 @@ class GeneratePeople
     puts "ID:#{teacher.id}"
     puts "The teacher #{name.upcase} of age #{age} with the specialization #{specialization} was created successfully!"
   end
-
-  def list_all_people
-    puts "People's list:\n\n"
-    if @people.empty?
-      puts 'Please ADD some people...'
-    else
-      @people.each_with_index do |person, index|
-        if person.instance_of?(Student)
-          print "\n#{index}) [Student]
-          Name: #{person.name}, ID: #{person.id},Age: #{person.age}, Classroom: #{person.classroom.label}\n"
-        else
-          print "\n#{index}) [Teacher]
-          Name: #{person.name}, ID: #{person.id}, Age: #{person.age}, Especialization: #{person.specialization}\n"
-        end
-      end
-    end
-  end
-
-  def list_all_students
-    if @students.empty?
-      puts 'Please ADD some students...'
-    else
-      puts 'STUDENTS: '
-      @students.each do |student|
-        puts "ID: #{student.id}, Name: #{student.name}, Age: #{student.age}, Classroom: #{student.classroom.label}"
-      end
-    end
-  end
-
-  def list_all_teachers
-    if @teachers.empty?
-      puts 'Please ADD some teachers...'
-    else
-      puts 'TEACHERS: '
-      @teachers.each do |teacher|
-        puts "ID: #{teacher.id}, Name: #{teacher.name}, Age: #{teacher.age}"
-      end
-    end
-  end
-  
+end

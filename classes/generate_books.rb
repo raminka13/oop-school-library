@@ -5,25 +5,16 @@ class GenerateBooks
   include DataValues
 
   def initialize
-    @books = DataValues.books
+    @book_list = DataValues.books
   end
 
   def create_book
-    print 'Title: '
+    puts 'Enter BOOK Title:'
     title = gets.chomp
-    print 'Author: '
+    puts 'Enter BOOK Author:'
     author = gets.chomp
-    @books.push(Book.new(title, author))
-    puts 'Book created successfully'
-  end
-
-  def list_books
-    if @books.length.zero?
-      puts 'There are no books, Please add a book first'
-    else
-      @books.each_with_index do |book, index|
-        puts "#{index + 1} - Book title: #{book.title}, Book author: #{book.author}"
-      end
-    end
+    book = Book.new(title, author)
+    puts "The book '#{title.upcase}' by #{author.upcase} was created successfully!"
+    @book_list << book unless @book_list.include?(book)
   end
 end
