@@ -14,9 +14,9 @@ class GeneratePeople
     num = gets.chomp.to_i
     case num
     when 1
-      student_option
+      @persons.push(student_option)
     when 2
-      teacher_option
+      @persons.push(teacher_option)bbbbbbbbbbbbbbbbbbb
     end
   end
 
