@@ -1,33 +1,22 @@
-require_relative 'book'
-require_relative 'person'
-require_relative 'rental'
-require_relative 'student'
-require_relative 'teacher'
-require_relative 'classroom'
+require './rental'
+require './data_values'
 
-class App
-  attr_accessor :book_list, :people
+class GenerateRentals
+  include DataValues
+  attr_reader :people_generator, :books_generator
 
   def initialize
-    @book_list = []
-    @people = []
-    @students = []
-    @teachers = []
-    @rentals = []
+    @persons = DataValues.persons
+    @books = DataValues.books
+    @people_generator = GeneratePeople.new
+    @books_generator = GenerateBooks.new
   end
 
-  def run
-    user_input
-  end
-
-  def create_book
-    puts 'Enter BOOK Title:'
-    title = gets.chomp
-    puts 'Enter BOOK Author:'
-    author = gets.chomp
-    book = Book.new(title, author)
-    puts "The book '#{title.upcase}' by #{author.upcase} was created successfully!"
-    @book_list << book unless @book_list.include?(book)
+  def person_object(id)
+    @persons.each do |person|
+      return person if person.id == id
+    end
+    nil
   end
 
   def create_rental
@@ -63,17 +52,3 @@ class App
       end
     end
   end
-
-  def list_all_books
-    if @book_list.empty?
-      puts 'Please ADD some books...'
-    else
-      puts "BOOKS:\n"
-      @book_list.each_with_index do |book, index|
-        puts "#{index}) Title: '#{book.title}', Author: '#{book.author}'"
-      end
-    end
-  end
-
-
-end
