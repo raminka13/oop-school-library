@@ -1,5 +1,8 @@
 require_relative 'app'
-require_relative 'morse_decoder'
+require './morse_decoder'
+require './generate_books'
+require './generate_people'
+require './generate_rentals'
 
 def main
   puts "\nWelcome to the School Library System!\n".upcase
@@ -14,11 +17,14 @@ def options(num)
   when 2
     list_all_people
   when 3
-    create_person
+    gen_people = GeneratePeople.new
+    gen_people.create_person
   when 4
-    create_book
+    gen_book = GenerateBooks.new
+    gen_book.create_book
   when 5
-    create_rental
+    gen_rentals = GenerateRentals.new
+    gen_rentals.create_rental
   when 6
     list_rentals_by_id
   end
