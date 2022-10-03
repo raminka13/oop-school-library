@@ -1,24 +1,13 @@
-require_relative 'book'
-require_relative 'person'
-require_relative 'rental'
-require_relative 'student'
-require_relative 'teacher'
-require_relative 'classroom'
+require './generate_books'
+require './generate_people'
+require './generate_rentals'
 
 class App
-  attr_accessor :book_list, :people
+  attr_reader :books_class, :people_class, :rentals_class
 
   def initialize
-    @book_list = []
-    @people = []
-    @students = []
-    @teachers = []
-    @rentals = []
+    @books_class = GenerateBooks.new
+    @people_class = GeneratePeople.new
+    @rentals_class = GenerateRentals.new
   end
-
-  def run
-    user_input
-  end
-
-
 end
