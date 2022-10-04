@@ -23,19 +23,27 @@ class GeneratePeople
     end
   end
 
-  def student_option
-    puts "Enter Student's name:"
+    def student_option
+      age, name = age_and_name('Student')
+      croom = Classroom.new(classroom)
+      parent_permission = permission?
+      student = Student.new(age, croom, name, parent_permission)
+      @people << student unless @people.include?(student)
+      @students << student unless @students.include?(student)
+      puts "ID:#{student.id} Student #{name.upcase} of age #{age} in #{croom.label.upcase} was created successfully!"
+    end
+
+  def age_and_name(kind)
+    puts "Enter #{kind}'s name:"
     name = gets.chomp
-    puts "Enter Student's age:"
+    puts "Enter #{kind}'s age:"
     age = gets.chomp.to_i
+    [age, name]
+  end
+
+  def classroom
     puts "Enter Student's classroom Name:"
-    croom = gets.chomp
-    classroom = Classroom.new(croom)
-    parent_permission = permission?
-    student = Student.new(age, classroom, name, parent_permission)
-    @people << student unless @people.include?(student)
-    @students << student unless @students.include?(student)
-    puts "ID:#{student.id} Student #{name.upcase} of age #{age} in #{classroom.label.upcase} was created successfully!"
+    gets.chomp
   end
 
   def permission?
@@ -54,17 +62,18 @@ class GeneratePeople
   end
 
   def teacher_option
-    puts "Enter the teacher's name:"
-    name = gets.chomp
-    puts "Enter Teacher's Age:"
-    age = gets.chomp.to_i
-    puts "Enter Teacher's Specialization:"
-    specialization = gets.chomp
+    age, name = age_and_name('Teacher')
     parent_permission = true
-    teacher = Teacher.new(age, specialization, name, parent_permission)
+    special = specialization
+    teacher = Teacher.new(age, special, name, parent_permission)
     @people << teacher unless @people.include?(teacher)
     @teachers << teacher unless @teachers.include?(teacher)
     puts "ID:#{teacher.id}"
-    puts "The teacher #{name.upcase} of age #{age} with the specialization #{specialization} was created successfully!"
+    puts "The teacher #{name.upcase} of age #{age} with the specialization #{special} was created successfully!"
+  end
+
+  def specialization
+    puts "Enter Teacher's Specialization:"
+    gets.chomp
   end
 end

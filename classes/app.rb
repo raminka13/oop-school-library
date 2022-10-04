@@ -75,7 +75,7 @@ class App
     else
       @rentals.select do |rental|
         if rental.person.id == person_id
-          puts "#{rental.person.name} Rentals. Book: #{rental.book.title} by: #{rental.book.author} on #{rental.date} "
+          puts "#{rental.person.name.upcase} RENTALS. Book: #{rental.book.title} by: #{rental.book.author} on #{rental.date} "
         end
       end
     end
