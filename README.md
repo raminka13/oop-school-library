@@ -11,12 +11,17 @@ A tool to record what books are in the library and who borrows them in an imagin
 - Run `ruby main.rb`
 - Follow the instructions.
 - In options type 99 for a treat.
-## Author
+## Authors
 
 👤 **Raul A Ospina** 🧑🏻‍💻
 - GitHub: [@raminka13](https://github.com/raminka13)
 - Twitter: [@raminka13](https://twitter.com/raminka13)
 - LinkedIn: [Raul Ospina](http://linkedin.com/in/raul-ospina)
+
+👤 **Muhammad Ashraf Siddiqui** 🧑🏻‍💻
+- GitHub: [@for-ashraf](https://github.com/for-ashraf)
+- Twitter: [@forashraf](https://twitter.com/forashraf)
+- LinkedIn: [Muhammad Ashraf](https://www.linkedin.com/in/muhammad-ashraf-30031439/)
 
 ## 🤝 Contributing
 
