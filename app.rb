@@ -71,13 +71,11 @@ class App
     person_id = gets.chomp.to_i
     puts "Rentals list:\n\n"
     if @rentals.empty?
-      puts 'Plesae ADD some rentals...'
+      puts 'Please ADD some rentals...'
     else
+      puts 'RENTALS.'
       @rentals.select do |rental|
-        if rental.person.id == person_id
-          puts "#{rental.person.name.upcase} RENTALS."
-          puts "Book: #{rental.book.title} by: #{rental.book.author} on #{rental.date} "
-        end
+        puts "Book: #{rental.book.title} by: #{rental.book.author} on #{rental.date} " if rental.person.id == person_id
       end
     end
   end

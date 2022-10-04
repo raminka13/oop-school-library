@@ -1,8 +1,8 @@
-require_relative 'app'
-require './morse_decoder'
-require './generate_books'
-require './generate_people'
-require './generate_rentals'
+require_relative './app'
+require_relative './morse_decoder'
+require_relative './generate_classes/generate_books'
+require_relative './generate_classes/generate_people'
+require_relative './generate_classes/generate_rentals'
 
 def main
   puts "\nWelcome to the School Library System!\n".upcase
