@@ -21,8 +21,6 @@ class App
       puts 'Please ADD some books...'
     else
       puts "BOOKS:\n"
-      p @book_list
-      p @book_list.to_json
       @book_list.each_with_index do |book, index|
         puts "#{index}) Title: '#{book.title}', Author: '#{book.author}'"
       end
@@ -99,7 +97,19 @@ class App
     end
   end
 
+  def content
+    @books = []
+    @book_list.each do |b|
+      bok = {
+        "title": b.title,
+        "author": b.author
+      }
+      @books << bok
+    end
+  end
+
   def save_files
-    File.write('books.json', JSON.generate(@book_list))
+    content
+    File.write('books.json', JSON.generate(@books))
   end
 end
