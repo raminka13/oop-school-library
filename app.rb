@@ -1,4 +1,5 @@
-require './data_values'
+require_relative './data_values'
+require 'json'
 
 class App
   attr_accessor :book_list, :people
@@ -20,6 +21,8 @@ class App
       puts 'Please ADD some books...'
     else
       puts "BOOKS:\n"
+      p @book_list
+      p @book_list.to_json
       @book_list.each_with_index do |book, index|
         puts "#{index}) Title: '#{book.title}', Author: '#{book.author}'"
       end
@@ -78,5 +81,25 @@ class App
         puts "Book: #{rental.book.title} by: #{rental.book.author} on #{rental.date} " if rental.person.id == person_id
       end
     end
+  end
+
+  def load_data
+    load_books
+  end
+
+  def load_books
+    if File.exist?('books.json')
+      data = JSON.parse(File.read('books.json'), create_additions: true)
+      p data
+      data.each do |book|
+        @book_list.push(Book.new(book['title'], book['author']))
+      end
+    else
+      []
+    end
+  end
+
+  def save_files
+    File.write('books.json', JSON.generate(@book_list))
   end
 end

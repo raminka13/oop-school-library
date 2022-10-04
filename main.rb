@@ -7,6 +7,7 @@ require_relative './generate_classes/generate_rentals'
 def main
   puts "\nWelcome to the School Library System!\n".upcase
   app = App.new
+  app.load_data
   app.run
 end
 
@@ -39,6 +40,7 @@ def extra_options(num)
   when 9
     print "\n\nThanks for using the School Library System.\n\nGOOD BYE
     ..-. --- .-.. .-.. --- .--   - .... .   .-. .- -... -... .. -\n"
+    save_files
     exit
   when 0
     print "\nPlease Enter a valid option\n".upcase
