@@ -23,15 +23,15 @@ class GeneratePeople
     end
   end
 
-    def student_option
-      age, name = age_and_name('Student')
-      croom = Classroom.new(classroom)
-      parent_permission = permission?
-      student = Student.new(age, croom, name, parent_permission)
-      @people << student unless @people.include?(student)
-      @students << student unless @students.include?(student)
-      puts "ID:#{student.id} Student #{name.upcase} of age #{age} in #{croom.label.upcase} was created successfully!"
-    end
+  def student_option
+    age, name = age_and_name('Student')
+    croom = Classroom.new(classroom)
+    parent_permission = permission?
+    student = Student.new(age, croom, name, parent_permission)
+    @people << student unless @people.include?(student)
+    @students << student unless @students.include?(student)
+    puts "ID:#{student.id} Student #{name.upcase} of age #{age} in #{croom.label.upcase} was created successfully!"
+  end
 
   def age_and_name(kind)
     puts "Enter #{kind}'s name:"
