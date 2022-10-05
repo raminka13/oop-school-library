@@ -1,4 +1,5 @@
 require_relative './data_values'
+require_relative './store_data/store_books'
 require 'json'
 
 class App
