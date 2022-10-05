@@ -3,14 +3,13 @@ require_relative './morse_decoder'
 require_relative './generate_classes/generate_books'
 require_relative './generate_classes/generate_people'
 require_relative './generate_classes/generate_rentals'
-require_relative './store_data/store_books'
-include BooksPersistence
-include PeoplePersistence
+require_relative './data_preserve/data_load_save'
 
 def main
   puts "\nWelcome to the School Library System!\n".upcase
+  datas = Dataset.new
+  datas.load_data
   app = App.new
-  app.load_data
   app.run
 end
 
@@ -43,8 +42,8 @@ def extra_options(num)
   when 9
     print "\n\nThanks for using the School Library System.\n\nGOOD BYE
     ..-. --- .-.. .-.. --- .--   - .... .   .-. .- -... -... .. -\n"
-    store_books(@book_list)
-    store_people(people)
+    data = Dataset.new
+    data.save_files
     exit
   when 0
     print "\nPlease Enter a valid option\n".upcase
