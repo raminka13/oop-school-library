@@ -5,6 +5,7 @@ require_relative './generate_classes/generate_people'
 require_relative './generate_classes/generate_rentals'
 require_relative './store_data/store_books'
 include BooksPersistence
+include PeoplePersistence
 
 def main
   puts "\nWelcome to the School Library System!\n".upcase
@@ -43,6 +44,7 @@ def extra_options(num)
     print "\n\nThanks for using the School Library System.\n\nGOOD BYE
     ..-. --- .-.. .-.. --- .--   - .... .   .-. .- -... -... .. -\n"
     store_books(@book_list)
+    store_people(people)
     exit
   when 0
     print "\nPlease Enter a valid option\n".upcase
@@ -77,5 +79,4 @@ def decode
   puts decoder.decode(morse)
 end
 
-load_books
 main

@@ -1,5 +1,8 @@
 require_relative './data_values'
 require_relative './store_data/store_books'
+require_relative './store_data/store_people'
+require_relative './template_classes/classroom'
+
 require 'json'
 
 class App
@@ -8,9 +11,15 @@ class App
   def initialize
     @book_list = DataValues.books
     @people = DataValues.people
-    @students = DataValues.students
-    @teachers = DataValues.teachers
+   
+    
     @rentals = DataValues.rentals
+    @teachers = load_people
+    @students = load_people
+    @books = load_books
+    
+
+    
   end
 
   def run

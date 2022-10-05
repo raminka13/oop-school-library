@@ -1,5 +1,4 @@
 require 'json'
-require_relative '../template_classes/book'
 
 module BooksPersistence
   def store_books(books)
@@ -12,7 +11,7 @@ module BooksPersistence
     books.each do |book|
       data << { title: book.title, author: book.author }
     end
-    File.write(file, JSON.generate(data))
+    File.write(file, JSON.pretty_generate(data))
   end
 
   def load_books
