@@ -1,0 +1,26 @@
+[
+  {
+    "json_class": "Student",
+    "id": 799,
+    "name": "Cindy Dorantes",
+    "age": 33,
+    "parent_permission": true,
+    "classroom": "Mexico"
+  },
+  {
+    "json_class": "Student",
+    "id": 702,
+    "name": "Pedro Fernandez",
+    "age": 33,
+    "parent_permission": true,
+    "classroom": "Colombia"
+  },
+  {
+    "json_class": "Teacher",
+    "id": 5790,
+    "specialization": "Frogs",
+    "age": 42,
+    "name": "Pepe le Frog",
+    "parent_permission": true
+  }
+]
