@@ -1,5 +1,5 @@
-require './book'
-require './data_values'
+require_relative '../template_classes/book'
+require_relative '../data_values'
 
 class GenerateBooks
   include DataValues

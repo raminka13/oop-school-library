@@ -1,0 +1,14 @@
+[
+  {
+    "json_class": "Rental",
+    "date": "10/05/2022",
+    "book_title": "Viva Mexico",
+    "id_people": 799
+  },
+  {
+    "json_class": "Rental",
+    "date": "10/05/2022",
+    "book_title": "Viva la Vida",
+    "id_people": 702
+  }
+]

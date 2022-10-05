@@ -1,7 +1,7 @@
-require './student'
-require './teacher'
-require './data_values'
-require './classroom'
+require_relative '../template_classes/student'
+require_relative '../template_classes/teacher'
+require_relative '../data_values'
+require_relative '../template_classes/classroom'
 
 class GeneratePeople
   include DataValues

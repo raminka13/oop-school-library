@@ -1,0 +1,12 @@
+[
+  {
+    "json_class": "Book",
+    "title": "Viva Mexico",
+    "author": "Chente Fernandez"
+  },
+  {
+    "json_class": "Book",
+    "title": "Viva la Vida",
+    "author": "Shakira Mebarak"
+  }
+]

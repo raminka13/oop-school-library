@@ -1,6 +1,6 @@
-require './rental'
-require './data_values'
-require './app'
+require_relative '../template_classes/rental'
+require_relative '../data_values'
+require_relative '../app'
 
 class GenerateRentals
   include DataValues

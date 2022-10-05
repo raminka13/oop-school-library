@@ -1,11 +1,14 @@
-require_relative 'app'
-require './morse_decoder'
-require './generate_books'
-require './generate_people'
-require './generate_rentals'
+require_relative './app'
+require_relative './morse_decoder'
+require_relative './generate_classes/generate_books'
+require_relative './generate_classes/generate_people'
+require_relative './generate_classes/generate_rentals'
+require_relative './data_preserve/data_load_save'
 
 def main
   puts "\nWelcome to the School Library System!\n".upcase
+  datas = Dataset.new
+  datas.load_data
   app = App.new
   app.run
 end
@@ -39,6 +42,8 @@ def extra_options(num)
   when 9
     print "\n\nThanks for using the School Library System.\n\nGOOD BYE
     ..-. --- .-.. .-.. --- .--   - .... .   .-. .- -... -... .. -\n"
+    data = Dataset.new
+    data.save_files
     exit
   when 0
     print "\nPlease Enter a valid option\n".upcase
