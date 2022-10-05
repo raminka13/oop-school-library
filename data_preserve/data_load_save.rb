@@ -23,7 +23,6 @@ class Dataset
       books_data = JSON.parse(File.read('./data_preserve/books.json'), create_additions: true)
       books_data.each do |bk|
         book = Book.new(bk['title'], bk['author'])
-        p book
         @book_list << book
       end
     else
