@@ -1,20 +1,29 @@
 require_relative '../template_classes/nameable'
-
 require_relative '../template_classes/rental'
 require_relative '../template_classes/book'
 require_relative '../template_classes/person'
 
 describe Rental do
   before(:each) do
-    @single_book = Book.new('Harry Potter', 'J.K.Rowling')
-    @single_person = Person.new(30, 'Raul', true)
-    @new_rental = Rental.new('2020/07/12', @single_book, @single_person)
+    @book = Book.new('Harry Potter', 'J.K.Rowling')
+    @person = Person.new(30, 'Raul', true)
+    @rental = Rental.new(@person, @book)
+    p @rental.date
   end
 
-  describe 'Rental#date getter' do
-    it 'The Rental class getter should return date "2020/07/12"' do
-      expect(@new_rental.date).to eql '2020/07/12'
-    end
-end
-  
+  it 'The Rental class getter should return date 10/06/2022' do
+    expect(@rental.date).to match '10/06/2022'
+  end
+
+  it 'The Rental class getter should return person name' do
+    expect(@rental.person.name).to eql 'Raul'
+  end
+
+  it 'The Rental class getter should return person id' do
+    expect(@rental.person.id).to be > 0
+  end
+
+  it 'The Rental class getter should return book title' do
+    expect(@rental.book.title).to eql 'Harry Potter'
+  end
 end
