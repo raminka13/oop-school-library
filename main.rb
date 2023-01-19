@@ -29,7 +29,7 @@ def options(num)
     gen_rentals = GenerateRentals.new
     gen_rentals.create_rental
   when 6
-    list_rentals_by_id
+    list_rentals
   end
 end
 
@@ -49,6 +49,8 @@ def extra_options(num)
     print "\nPlease Enter a valid option\n".upcase
   when 99
     decode
+  else
+    puts 'Enter a Valid Option'
   end
 end
 
@@ -60,14 +62,16 @@ def user_input
         3 - Create a Person
         4 - Create a Book
         5 - Create a Rental
-        6 - List All Rentals for a Given Person ID
+        6 - List Rentals
         7 - List All Students
         8 - List All Teachers
-        9 - Exit"
+        9 - Exit
+
+        Type your option"
 
   answer = gets.chomp.to_i
-  options(answer)
-  extra_options(answer)
+  options(answer) if answer <= 6
+  extra_options(answer) if answer > 6
   user_input
 end
 

@@ -1,12 +1,1 @@
-[
-  {
-    "json_class": "Book",
-    "title": "Viva Mexico",
-    "author": "Chente Fernandez"
-  },
-  {
-    "json_class": "Book",
-    "title": "Viva la Vida",
-    "author": "Shakira Mebarak"
-  }
-]
+[{"json_class":"Book","title":"Viva Mexico","author":"Chente Fernandez"},{"json_class":"Book","title":"A Game of Thrones","author":"G.R.R. Martin"},{"json_class":"Book","title":"The Hobbit","author":"J.R.R Tolkien"},{"json_class":"Book","title":"The Lord of the Rings","author":"J.R.R Tolkien"},{"json_class":"Book","title":"Viva la Vida","author":"Shakira Mebarak"}]

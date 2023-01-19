@@ -69,7 +69,7 @@ class Dataset
   end
 
   def save_files
-    File.write('./data_preserve/books.json', JSON.pretty_generate(@book_list))
+    File.write('./data_preserve/books.json', JSON.generate(@book_list))
     File.write('./data_preserve/people.json', JSON.pretty_generate(@people))
     File.write('./data_preserve/rentals.json', JSON.pretty_generate(@rentals))
   end

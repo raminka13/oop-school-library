@@ -22,5 +22,29 @@
     "age": 42,
     "name": "Pepe le Frog",
     "parent_permission": true
+  },
+  {
+    "json_class": "Student",
+    "id": 4844,
+    "name": "Aria Stark",
+    "age": 18,
+    "parent_permission": false,
+    "classroom": "Winterfell"
+  },
+  {
+    "json_class": "Teacher",
+    "id": 663,
+    "specialization": "Winter",
+    "age": 54,
+    "name": "Ned Stark",
+    "parent_permission": true
+  },
+  {
+    "json_class": "Teacher",
+    "id": 76,
+    "specialization": "Battle",
+    "age": 32,
+    "name": "Jon Snow",
+    "parent_permission": true
   }
 ]

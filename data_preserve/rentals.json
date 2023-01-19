@@ -10,5 +10,35 @@
     "date": "10/05/2022",
     "book_title": "Viva la Vida",
     "id_people": 702
+  },
+  {
+    "json_class": "Rental",
+    "date": "10/08/2022",
+    "book_title": "The Hobbit",
+    "id_people": 5790
+  },
+  {
+    "json_class": "Rental",
+    "date": "10/08/2022",
+    "book_title": "The Lord of the Rings",
+    "id_people": 4844
+  },
+  {
+    "json_class": "Rental",
+    "date": "10/08/2022",
+    "book_title": "Viva la Vida",
+    "id_people": 663
+  },
+  {
+    "json_class": "Rental",
+    "date": "10/08/2022",
+    "book_title": "Viva Mexico",
+    "id_people": 76
+  },
+  {
+    "json_class": "Rental",
+    "date": "10/09/2022",
+    "book_title": "The Hobbit",
+    "id_people": 5790
   }
 ]

@@ -13,7 +13,7 @@ class GeneratePeople
   end
 
   def create_person
-    puts 'Which do you want to create? A student (press 1) or a teacher (press 2)?'
+    puts 'Which do you want to create? A student (Type 1) or a teacher (Type 2)?'
     num = gets.chomp.to_i
     case num
     when 1
